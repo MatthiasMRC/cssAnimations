@@ -16,6 +16,7 @@
     z-index: 999;
     padding:15px 0px 15px;
     transition: all 0.3s ease;
+    user-select: none;
 }  
 
 .navbar.scroll{
@@ -23,8 +24,7 @@
     background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ;
     border-bottom-left-radius: 10px 10px;
     border-bottom-right-radius: 10px 10px;
-    box-shadow: 5px 0px 5px 5px rgba(255, 255, 255, .2);;
-    background-color: white;
+    box-shadow: 5px 0px 5px 5px rgba(255, 255, 255, .2);
 }
 
 .navbar .logo a{
@@ -170,27 +170,100 @@
 /* End - Home section */
 
 /* Start AnimationsCSS page */
-.animation-section .content-text{
+#blocpage{
+    font-family: "poppins",sans-serif;
+    width: 100%;
+    margin:auto;
     color:#fff;
-    margin-left: 15px;
-    text-transform: uppercase;
-    font-size: 25px;
 }
 
-.animation-section .content-cicrle{
+.content-menu-box-fixed{
+    font-size: 12px;
+    position: fixed;
+    margin-top: 50px;
+    left:-250px;
+    width:250px;
+    padding: 25px 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.animation-section{
+    display: flex;
+    position: relative;
+    top:120px;
+}
+
+.content-menu-listing li {
+    list-style: none;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.content-menu-listing li:hover {
+    padding-left: 30px;
+    color:#833ab4;
+    font-weight: 600;
+}
+
+.animations-content{
+   margin-left: 300px;
+   font-size: 25px;
+}
+
+.button-animation{
+    display: flex;
+    align-items: center;
+}
+
+.content-cicrle{
     width: 20px;
     height: 20px;
     border: 3px solid #fff;
     background-color: #833ab4;
     border-radius: 5px;
+    margin-right: 30px;
 }
 
-.animations-content{
-    font-family: "poppins",sans-serif;
-    display: flex;
-    position: absolute;
-    top: 125px;
-    margin-left: 30px;
-    align-items: center;
+.content-menu-name-box{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    user-select: none;
 }
-/* End AnimationsCSS page */
+
+#check{
+    display: none;
+    position: fixed;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+}
+
+label #btn{
+    left:5px;
+    top: 173px;
+    font-size: 30px;
+    color:rgba(255, 255, 255, 0.5);
+    position: fixed;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+#check:checked ~ .animation-section .content-menu-box-fixed{
+    left:0;
+}
+#check:checked ~ label #btn{
+    left:215px;
+    transform: rotate(180deg);
+}
+
+
+/* End AnimationsCSS page */ 
