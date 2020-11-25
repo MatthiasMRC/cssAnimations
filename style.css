@@ -15,7 +15,17 @@
     font-family: "poppins",sans-serif;
     z-index: 999;
     padding:15px 0px 15px;
+    transition: all 0.3s ease;
 }  
+
+.navbar.scroll{
+    padding:5px 0px 5px;
+    background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    box-shadow: 5px 0px 5px 5px rgba(255, 255, 255, .2);;
+    background-color: white;
+}
 
 .navbar .logo a{
     color:#ffffff;
@@ -24,6 +34,11 @@
     border: 2px solid #fff;
     border-radius: 5px;
     padding: 0px 10px 0px;
+    transition: all 0.s ease;
+}
+
+.navbar.scroll .logo a{
+    border: 1px solid #fff;
 }
 
 .navbar .logo a span{
@@ -32,19 +47,15 @@
     letter-spacing: 2px;
 }
 
-.navbar .menu li a{
+.navbar li a{
     color: #ffffff;
     font-size: 18px;
-    transition: all 2s ease-out;
 }
 
-.navbar .menu li a:hover{
-    border-bottom: 2px solid #fff;
-}
-
-.navbar .menu li{
-    display: inline-block;  
+.navbar li{
+    display: inline-block;
     margin: 0px 15px 0px;
+    list-style: none;
 }
 
 .navbar .max-width{
@@ -60,13 +71,40 @@
 /* End Styling navbar*/
 
 /* Start - Gradiant and modifications*/
-section{
+.index{
     width: 100%;
     height: 100vh;
     background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ;
     background-size: 400%;
     position:absolute;
-    animation: change 20s ease-in-out infinite;
+    animation: change 15s ease-in-out infinite;
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    25%{
+        background-position: 50% 25%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    75%{
+        background-position: 50% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+.animationcss{
+    width: 100%;
+    height: 3000px;
+    background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ;
+    background-size: 400%;
+    position:absolute;
+    animation: change 10s ease-in-out infinite;
 }
 
 @keyframes change{
@@ -93,6 +131,7 @@ section{
     display: flex;
     color: #fff;
     font-family: "poppins",sans-serif;
+    margin-top: 230px;
 }
 
 .home-section .max-width{
@@ -128,5 +167,30 @@ section{
 .content-inline-block h1{
     display: inline-block;
 }
-
 /* End - Home section */
+
+/* Start AnimationsCSS page */
+.animation-section .content-text{
+    color:#fff;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.animation-section .content-cicrle{
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    background-color: #833ab4;
+    border-radius: 5px;
+}
+
+.animations-content{
+    font-family: "poppins",sans-serif;
+    display: flex;
+    position: absolute;
+    top: 125px;
+    margin-left: 30px;
+    align-items: center;
+}
+/* End AnimationsCSS page */
