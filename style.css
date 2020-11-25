@@ -181,7 +181,7 @@
     font-size: 12px;
     position: fixed;
     margin-top: 50px;
-    left:-250px;
+    left:0px;
     width:250px;
     padding: 25px 25px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -248,7 +248,7 @@ label #btn, label #cancel{
 }
 
 label #btn{
-    left:5px;
+    left:215px;
     top: 173px;
     font-size: 30px;
     color:rgba(255, 255, 255, 0.5);
@@ -258,10 +258,10 @@ label #btn{
 }
 
 #check:checked ~ .animation-section .content-menu-box-fixed{
-    left:0;
+    left:-250px;
 }
 #check:checked ~ label #btn{
-    left:215px;
+    left:5px;
     transform: rotate(180deg);
 }
 
