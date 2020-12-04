@@ -5,6 +5,7 @@
     padding:0;
     box-sizing: border-box;
     text-decoration: none;
+    overflow: hidden;
 }
 
 /* Start Styling navbar*/
@@ -28,10 +29,10 @@
 }
 
 .navbar .logo a{
-    color:#ffffff;
+    color:#833ab4;
     font-size: 33px;
-    font-weight: 300;
-    border: 2px solid #fff;
+    font-weight: 700;
+    border: 2px solid #833ab4;
     border-radius: 5px;
     padding: 0px 10px 0px;
     transition: all 0.s ease;
@@ -48,8 +49,13 @@
 }
 
 .navbar li a{
-    color: #ffffff;
+    color: #000000;
     font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover{
+    color:#833ab4;
 }
 
 .navbar li{
@@ -74,7 +80,8 @@
 .index{
     width: 100%;
     height: 100vh;
-    background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ;
+    /* background: linear-gradient( 45deg,#833ab4,#fd621d, #fcb045) ; */
+    background-color: #ffff;
     background-size: 400%;
     position:absolute;
     animation: change 15s ease-in-out infinite;
@@ -129,7 +136,7 @@
 /* Start - Home section */
 .home-section{
     display: flex;
-    color: #fff;
+    color: #0e0e0e;
     font-family: "poppins",sans-serif;
     margin-top: 230px;
 }
@@ -139,33 +146,48 @@
 }
 
 .home-section .body-content .text-1{
-    font-size: 27px;
-    font-weight: 300;
+    font-size: 45px;
+    font-weight: 600;
 }
 
 .home-section .body-content .text-2{
     font-size: 75px;
     font-weight: 600;
+    color: #833ab4;
  
 }
 
 .home-section .body-content .text-3{
-    font-size: 45px;
-    font-weight: 300;
+    font-size: 50px;
+    font-weight: 600;
 }
 
 
 .home-section .text-typing{
     border: 3px solid #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 45px;
     font-weight: 500;
     padding-left: 10px;
+    color:#FFFF;
+    background-color: #833ab4;
 
 }
 
 .content-inline-block h1{
     display: inline-block;
+}
+
+.picture-presentation img{
+    position: absolute;
+    top: 170px;
+    right:200px;
+    width: 400px;
+    height:auto;
+}
+
+.content-body{
+    position: relative;
 }
 /* End - Home section */
 
@@ -180,9 +202,13 @@
 .content-menu-box-fixed{
     font-size: 12px;
     position: fixed;
-    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    top: 200px;
     left:0px;
-    width:250px;
+    width:300px;
     padding: 25px 25px;
     background-color: rgba(255, 255, 255, 0.2);
     border-top-right-radius: 10px;
@@ -196,18 +222,65 @@
     top:120px;
 }
 
+.content-menu-listing ul{
+    position: relative;
+    padding: 0;
+}
+
 .content-menu-listing li {
+    position: relative;
+    display: table;
     list-style: none;
-    padding-left: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    padding-left: 34px;
+    margin: 10px 10px;
+}
+
+.content-menu-listing li::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 24px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    transition: background 0.4s, width 0.4s, border 0.4s;
+    transition-delay: 0.2s, 0s, 0s;
 }
 
 
-.content-menu-listing li:hover {
-    padding-left: 30px;
-    color:#833ab4;
-    font-weight: 600;
+.content-menu-listing li::after{
+    content:'';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    top:8px;
+    left:7px;
+    transition: 0.3s all ease;
+    transition-delay: 0.2s;
+}
+
+.content-menu-listing li:hover::after{
+    left:15px;
+}
+
+.content-menu-listing li:hover::before{
+    width: 100%;
+    background: #833ab4;
+    border-color: #833ab4;
+    transition-delay: 0s, 0.2s, 0s;
+}
+
+.content-menu-listing li p{
+    position: relative;
+    z-index:10;
+    padding:3px 15px 0 0;
 }
 
 .animations-content{
@@ -229,12 +302,15 @@
     margin-right: 30px;
 }
 
-.content-menu-name-box{
-    text-align: center;
+.content-menu-name-box h1{
+    display: inline-block;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 800;
     user-select: none;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #Ffff;
+    border-radius: 1px;
 }
 
 #check{
@@ -242,28 +318,49 @@
     position: fixed;
 }
 
-label #btn, label #cancel{
+label #btnCancel, label #btnOpen{
     position: absolute;
     cursor: pointer;
 }
 
-label #btn{
-    left:215px;
-    top: 173px;
+label #btnCancel{
+    left:10px;
+    top: 210px;
     font-size: 30px;
     color:rgba(255, 255, 255, 0.5);
     position: fixed;
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: scale 0.3s ease, left 0.3s, color 0.3s;
+    transition-delay: 0s, 0.3s, 0s;
+    scale: 1;
+}
+
+label #btnOpen{
+    left:-50px;
+    top: 210px;
+    font-size: 30px;
+    color:rgba(255, 255, 255, 0.5);
+    position: fixed;
+    z-index: 999;
+    transition: scale 0.3s ease, left 0.3s, color 0.3s;
+    transition-delay: 0s, 0.3s, 0s;
+    scale: 1;
+}
+
+#btnCancel:hover, #btnOpen:hover{
+    transform: scale(1.15);
+    color: #833ab4;
 }
 
 #check:checked ~ .animation-section .content-menu-box-fixed{
-    left:-250px;
-}
-#check:checked ~ label #btn{
-    left:5px;
-    transform: rotate(180deg);
+    left:-300px;
 }
 
+#check:checked ~ label #btnCancel{
+    left:-50px;
+}
 
+#check:checked ~ label #btnOpen{
+    left: 10px;
+}
 /* End AnimationsCSS page */ 
